@@ -38,7 +38,11 @@ def register_patched_safetensor_modelpatcher():
         # PATCH load_models_gpu with correct memory calculations per model flags
         def patched_load_models_gpu(models, memory_required=0, force_patch_weights=False, minimum_memory_required=None, force_full_load=False):
             from comfy.model_management import cleanup_models_gc, get_free_memory, free_memory, current_loaded_models
-            from comfy.model_management import VRAMState, vram_state, lowvram_available, MIN_WEIGHT_MEMORY_RATIO
+            from comfy.model_management import VRAMState, vram_state, MIN_WEIGHT_MEMORY_RATIO
+            try:  # removed in ComfyUI 0.46
+                from comfy.model_management import lowvram_available
+            except ImportError:
+                lowvram_available = True
             from comfy.model_management import minimum_inference_memory, extra_reserved_memory, is_device_cpu
 
             multigpu_memory_log("load_models_gpu_top_level", "start")
