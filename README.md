@@ -24,6 +24,9 @@ One node is registered. Nothing else runs.
 
 `UNETLoaderDisTorch2MultiGPU` - "Load Diffusion Model (DisTorch2, multi-GPU)"
 
+![UNETLoaderDisTorch2MultiGPU](assets/node.png)
+
+
 | input | meaning |
 |---|---|
 | `unet_name` | the diffusion model |
