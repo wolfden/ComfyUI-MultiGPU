@@ -26,6 +26,8 @@ One node is registered. Nothing else runs.
 
 ![UNETLoaderDisTorch2MultiGPU](assets/node.png)
 
+*The node with the settings used for the measurements below. The node title was renamed locally; a freshly added node shows up as `Load Diffusion Model (DisTorch2, multi-GPU)`.*
+
 
 | input | meaning |
 |---|---|
