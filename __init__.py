@@ -587,9 +587,9 @@ logger.info(f"[MultiGPU DEBUG] Initial current_unet_offload_device: {current_une
 mm.get_torch_device = get_torch_device_patched
 mm.text_encoder_device = text_encoder_device_patched
 mm.unet_offload_device = unet_offload_device_patched
-_patch_model_management_current_stream()
-_patch_comfy_sample_runtime_device()
-_patch_comfy_kitchen_dlpack_device_guard()
+# _patch_model_management_current_stream()  # disabled in this fork: only DisTorch2 is used, no cross-device tensors
+# _patch_comfy_sample_runtime_device()  # disabled in this fork: only DisTorch2 is used, no cross-device tensors
+# _patch_comfy_kitchen_dlpack_device_guard()  # disabled in this fork: only DisTorch2 is used, no cross-device tensors
 _initialize_aimdo_visible_cuda_devices()
 
 from .nodes import (
